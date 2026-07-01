@@ -302,6 +302,11 @@
   .course-units {
     display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
   }
+  .unit-group-label {
+    font-size: 11.5px; font-weight: 900; letter-spacing: 0.5px;
+    color: var(--teal); text-transform: uppercase;
+    margin: 4px 0 10px;
+  }
   .course-unit {
     font-size: 12px; color: rgba(255,255,255,0.7);
     background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
@@ -339,7 +344,7 @@
   .course-topics-toggle.open .arrow { transform: rotate(180deg); }
   .course-units-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
   .course-schedule-note { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; line-height: 1.7; }
-  .course-units-panel.open { max-height: 600px; }
+  .course-units-panel.open { max-height: 1000px; }
 
   .coming-soon-card {
     background: rgba(255,255,255,0.03); border: 1px dashed rgba(29,184,168,0.4);
@@ -701,12 +706,8 @@
           <span class="arrow">▼</span> 查看全部課題（30個）
         </button>
         <div class="course-units-panel" id="units-43">
+          <div class="unit-group-label">選修 Paper 2A 會計 · Accounting Elective</div>
           <div class="course-units">
-            <span class="course-unit">AC1 基礎會計記帳<span class="unit-en">Basic accounting entries</span></span>
-            <span class="course-unit">AC2 折扣<span class="unit-en">Discounts (trade and cash discounts)</span></span>
-            <span class="course-unit">AC3 試算表<span class="unit-en">Trial balance</span></span>
-            <span class="course-unit">AC4 損益表<span class="unit-en">Income statement</span></span>
-            <span class="course-unit">AC5 財務狀況表<span class="unit-en">Statement of financial position</span></span>
             <span class="course-unit">FA1 原始分錄簿<span class="unit-en">Books of original entries</span></span>
             <span class="course-unit">FA2 期末調整(1) 應計與預付<span class="unit-en">Accrual and prepayment</span></span>
             <span class="course-unit">FA3 期末調整(2) 壞帳及呆賬準備<span class="unit-en">Bad debts and allowance for doubtful accounts</span></span>
@@ -725,6 +726,14 @@
             <span class="course-unit">CA2 成本會計(II) 邊際成本法及吸收成本法<span class="unit-en">Costing (II) Absorption and Marginal Costing</span></span>
             <span class="course-unit">CA3 成本會計(III) 本量利分析<span class="unit-en">Costing (III) CVP Analysis</span></span>
             <span class="course-unit">CA4 成本會計(IV) 決策<span class="unit-en">Costing (IV) Decision making</span></span>
+          </div>
+          <div class="unit-group-label">必修部分 Paper 1A · Compulsory Part</div>
+          <div class="course-units">
+            <span class="course-unit">AC1 基礎會計記帳<span class="unit-en">Basic accounting entries</span></span>
+            <span class="course-unit">AC2 折扣<span class="unit-en">Discounts (trade and cash discounts)</span></span>
+            <span class="course-unit">AC3 試算表<span class="unit-en">Trial balance</span></span>
+            <span class="course-unit">AC4 損益表<span class="unit-en">Income statement</span></span>
+            <span class="course-unit">AC5 財務狀況表<span class="unit-en">Statement of financial position</span></span>
             <span class="course-unit">PF1 金錢的時間值<span class="unit-en">Time Value of Money</span></span>
             <span class="course-unit">PF2 消費者信貸<span class="unit-en">Consumer Credit</span></span>
             <span class="course-unit">PF3 策劃個人理財及投資<span class="unit-en">Personal Financial Planning and Investment</span></span>
