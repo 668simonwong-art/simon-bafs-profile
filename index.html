@@ -344,6 +344,35 @@
   .coming-soon-card .cs-title { font-size: 17px; font-weight: 900; color: var(--teal); margin-bottom: 8px; }
   .coming-soon-card .cs-desc { font-size: 13.5px; color: var(--text-dim); }
 
+  .track-preview-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    text-align: left;
+  }
+  .track-preview-card {
+    background: rgba(29,184,168,0.08); border: 1px solid rgba(29,184,168,0.3);
+    border-radius: 14px; padding: 20px 22px;
+  }
+  .track-preview-card.elite {
+    background: rgba(255,215,0,0.06); border: 1px solid rgba(255,215,0,0.3);
+  }
+  .track-preview-name { font-size: 18px; font-weight: 900; color: var(--teal); margin-bottom: 4px; }
+  .track-preview-card.elite .track-preview-name { color: var(--gold); }
+  .track-preview-tag { font-size: 12px; font-weight: 700; color: var(--text-dim); margin-bottom: 14px; }
+  .track-preview-points { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .track-preview-points li {
+    font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.6;
+    padding-left: 16px; position: relative;
+  }
+  .track-preview-points li::before {
+    content: '✦'; color: var(--teal); font-size: 10px;
+    position: absolute; left: 0; top: 5px;
+  }
+  .track-preview-card.elite .track-preview-points li::before { color: var(--gold); }
+
+  @media (max-width: 680px) {
+    .track-preview-row { grid-template-columns: 1fr; }
+  }
+
   /* ── FAQ ── */
   .faq-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
   .faq-item {
@@ -708,7 +737,28 @@
       <!-- Coming soon: 2026-2027 regular course plan -->
       <div class="coming-soon-card">
         <div class="cs-title">📅 2026 - 2027 常規課程計劃</div>
-        <div class="cs-desc">新學年常規課程規劃現正籌備中，敬請期待。想第一時間獲得通知，歡迎透過 WhatsApp 或 Instagram 查詢。</div>
+        <div class="cs-desc" style="margin-bottom:24px;">新學年常規課程現正籌備中，需求主導、學生為本，兩條路徑任君選擇。詳細時間表及學費將於稍後公布，想第一時間獲得通知，歡迎透過 WhatsApp 或 Instagram 查詢。</div>
+        <div class="track-preview-row">
+          <div class="track-preview-card">
+            <div class="track-preview-name">Zero to Hero</div>
+            <div class="track-preview-tag">重新出發・概念重整・穩四衝五</div>
+            <ul class="track-preview-points">
+              <li>整年重整學習進度，穩守 L4，衝擊 L5</li>
+              <li>針對常見重複題目，重點突破「唔識變」</li>
+              <li>課堂＋課後練習，全面提升</li>
+            </ul>
+          </div>
+          <div class="track-preview-card elite">
+            <div class="track-preview-name">Elite Class</div>
+            <div class="track-preview-tag">為星而戰・確保至少一星底線</div>
+            <ul class="track-preview-points">
+              <li>適合已有一定基礎、目標衝 5* 的同學</li>
+              <li>聚焦複雜概念與易錯位，延伸催化思考</li>
+              <li>自擬題目＋高難度模擬卷，挑戰極限</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-desc" style="margin-top:20px; font-size:12.5px;">✦ 課堂模式：每課 1.5 小時｜配套：主筆記、歷屆試題、無限次重溫教學錄影、WhatsApp 問書服務</div>
       </div>
 
     </div>
