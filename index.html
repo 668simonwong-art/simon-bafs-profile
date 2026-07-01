@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simon BAFS｜真・會計狀元｜明道教育 Lumos Education</title>
+<meta name="description" content="Simon Wong，中大會計系一級榮譽畢業，CPA Australia 會計師，六屆親身應考 DSE BAFS 全取 5**。提供暑期備戰課、從零起步班、By Topic 分課題課程。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0B1A2E;
+    --navy-mid: #0D2545;
+    --teal: #1DB8A8;
+    --teal-light: #2CE8D0;
+    --teal-dim: rgba(29,184,168,0.15);
+    --gold: #FFD700;
+    --white: #FFFFFF;
+    --text-dim: rgba(255,255,255,0.65);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Noto Sans HK', 'PingFang HK', 'Microsoft JhengHei', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── UTILITY ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .teal { color: var(--teal); }
+  .gold { color: var(--gold); }
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--teal); color: #fff;
+    font-size: 12px; font-weight: 900; padding: 5px 14px;
+    border-radius: 20px; letter-spacing: 1px;
+  }
+  .divider {
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    border-radius: 2px; margin: 16px 0;
+  }
+
+  /* ── TOP ACCENT BAR ── */
+  .accent-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--teal-light), var(--teal));
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: rgba(11,26,46,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(29,184,168,0.2);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 900px; margin: 0 auto; padding: 14px 20px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img.nav-logo-img { width: 52px; height: 52px; object-fit: contain; }
+  .nav-brand { display: flex; flex-direction: column; }
+  .nav-brand-main { color: #fff; font-size: 12px; font-weight: 900; letter-spacing: 2px; }
+  .nav-brand-sub { color: var(--teal); font-size: 9px; font-weight: 700; letter-spacing: 3px; }
+  .nav-links { display: flex; align-items: center; gap: 20px; }
+  .nav-link { color: var(--text-dim); font-size: 13px; font-weight: 700; text-decoration: none; transition: color 0.2s; }
+  .nav-link:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal); color: #fff;
+    font-size: 13px; font-weight: 900; padding: 9px 20px;
+    border-radius: 24px; text-decoration: none;
+    border: none; cursor: pointer; letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--teal-light); transform: scale(1.03); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, #0B1A2E 0%, #0D2545 60%, #0B1A2E 100%);
+    padding: 60px 20px 70px;
+  }
+  .hero-deco-1 {
+    position: absolute; top: -80px; right: -80px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,184,168,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-deco-2 {
+    position: absolute; bottom: -60px; left: -60px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,184,168,0.07), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 260px; gap: 40px; align-items: center;
+  }
+  .hero-eyebrow { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .hero-title {
+    font-size: clamp(34px, 6vw, 52px);
+    font-weight: 900; line-height: 1.1; margin-bottom: 16px;
+  }
+  .hero-subtitle {
+    color: var(--teal); font-size: 17px; font-weight: 700;
+    line-height: 1.5; margin-bottom: 24px;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px;
+  }
+  .hero-meta-item {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(29,184,168,0.1); border: 1px solid rgba(29,184,168,0.3);
+    color: #B0F0EA; font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 20px;
+  }
+  .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--teal); color: #fff;
+    font-size: 16px; font-weight: 900; padding: 14px 32px;
+    border-radius: 32px; text-decoration: none;
+    display: inline-block; letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(29,184,168,0.4);
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(29,184,168,0.5); }
+  .btn-secondary {
+    background: transparent; color: var(--teal);
+    font-size: 16px; font-weight: 700; padding: 14px 28px;
+    border-radius: 32px; text-decoration: none;
+    display: inline-block; letter-spacing: 0.5px;
+    border: 2px solid var(--teal);
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { background: var(--teal-dim); }
+
+  .hero-photo-wrap {
+    position: relative; display: flex; justify-content: flex-end; align-items: flex-end;
+  }
+  .hero-photo-bg {
+    position: absolute; bottom: -20px; right: -10px;
+    width: 240px; height: 300px; border-radius: 16px;
+    background: linear-gradient(145deg, rgba(29,184,168,0.15), rgba(29,184,168,0.05));
+    border: 1px solid rgba(29,184,168,0.25);
+  }
+  .hero-photo {
+    position: relative; z-index: 2;
+    width: 220px; height: 280px; object-fit: cover;
+    object-position: top center; border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  }
+  .hero-photo-badge {
+    position: absolute; bottom: -10px; left: -20px; z-index: 3;
+    background: var(--navy); border: 2px solid var(--teal);
+    padding: 10px 14px; border-radius: 12px;
+    font-size: 12px; font-weight: 700; color: var(--teal);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    white-space: nowrap;
+  }
+  .hero-photo-badge strong { display: block; font-size: 18px; color: var(--gold); }
+
+  /* ── SECTIONS ── */
+  section { padding: 64px 20px; }
+  section:nth-child(odd) { background: var(--navy); }
+  section:nth-child(even) { background: #0A1828; }
+
+  .section-label {
+    font-size: 11px; font-weight: 900; letter-spacing: 3px;
+    color: var(--teal); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(24px, 4vw, 34px); font-weight: 900;
+    line-height: 1.2; margin-bottom: 12px;
+  }
+  .section-desc { color: var(--text-dim); font-size: 15px; max-width: 560px; }
+
+  /* ── INSTRUCTOR ── */
+  .instructor-wrap {
+    display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start;
+    margin-top: 36px;
+  }
+  .instructor-photo-frame {
+    position: relative;
+  }
+  .instructor-photo {
+    width: 200px; height: 240px; object-fit: cover;
+    object-position: top center; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+  .instructor-star-badge {
+    position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--navy); border: 2px solid var(--gold);
+    color: var(--gold); font-size: 13px; font-weight: 900;
+    padding: 6px 14px; border-radius: 20px; white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .instructor-name { font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+  .instructor-title { color: var(--teal); font-size: 14px; font-weight: 700; margin-bottom: 20px; }
+  .instructor-points { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .instructor-points li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14.5px; color: rgba(255,255,255,0.85); line-height: 1.6;
+  }
+  .instructor-points li::before {
+    content: '✦'; color: var(--teal); font-size: 12px; margin-top: 4px; flex-shrink: 0;
+  }
+  .instructor-ig {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--teal); font-size: 13px; font-weight: 700;
+    text-decoration: none; border: 1px solid rgba(29,184,168,0.4);
+    padding: 6px 14px; border-radius: 20px;
+    transition: background 0.2s;
+  }
+  .instructor-ig:hover { background: var(--teal-dim); }
+
+  /* ── CREDENTIAL BADGES ── */
+  .cred-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 24px; }
+  .cred-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(29,184,168,0.08); border: 1px solid rgba(29,184,168,0.35);
+    border-radius: 10px; padding: 10px 16px;
+    font-size: 13.5px; color: rgba(255,255,255,0.9); line-height: 1.4;
+  }
+  .cred-badge-icon { flex-shrink: 0; display: flex; align-items: center; }
+  .cred-badge-icon img { height: 36px; width: auto; border-radius: 4px; }
+  .cred-badge-text strong { display: block; color: var(--gold); font-size: 13px; font-weight: 900; }
+
+  /* ── DSE SCORE TABLE ── */
+  .score-table-wrap { margin: 28px 0; }
+  .score-table-title {
+    font-size: 13px; font-weight: 900; color: var(--gold); letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .score-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .score-table th {
+    background: rgba(29,184,168,0.15); color: var(--teal);
+    font-size: 12px; font-weight: 900; letter-spacing: 1px;
+    padding: 8px 14px; text-align: left; border-bottom: 1px solid rgba(29,184,168,0.3);
+  }
+  .score-table td {
+    padding: 9px 14px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.85);
+  }
+  .score-table tr:last-child td { border-bottom: none; }
+  .score-table .score-star { color: var(--gold); font-weight: 900; }
+  .score-table .score-pct { color: var(--teal); font-weight: 700; }
+
+  /* ── PHILOSOPHY QUOTE ── */
+  .philosophy-box {
+    margin-top: 28px; padding: 20px 24px;
+    border-left: 3px solid var(--gold);
+    background: rgba(212,175,55,0.06); border-radius: 0 10px 10px 0;
+    font-size: 14.5px; color: rgba(255,255,255,0.85); line-height: 1.7;
+    font-style: italic;
+  }
+  .philosophy-box span { display: block; margin-top: 10px; font-style: normal; font-size: 13px; color: var(--gold); font-weight: 700; }
+
+  /* ── STATS ── */
+  .proof-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px; margin: 32px 0 0;
+  }
+  .proof-card {
+    text-align: center; padding: 24px 14px;
+    background: rgba(29,184,168,0.06); border: 1px solid rgba(29,184,168,0.2);
+    border-radius: 14px;
+  }
+  .proof-number { font-size: 30px; font-weight: 900; color: var(--teal); }
+  .proof-label { font-size: 12.5px; color: var(--text-dim); margin-top: 4px; }
+
+  /* ── COURSES ── */
+  .course-list { display: flex; flex-direction: column; gap: 24px; margin-top: 36px; }
+  .course-card {
+    background: var(--navy-mid); border: 1px solid rgba(29,184,168,0.2);
+    border-radius: 16px; padding: 28px 30px;
+    transition: border-color 0.2s;
+  }
+  .course-card:hover { border-color: rgba(29,184,168,0.5); }
+  .course-card.flagship { border-color: rgba(255,215,0,0.4); }
+  .course-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .course-tag {
+    font-size: 11px; font-weight: 900; letter-spacing: 0.5px;
+    padding: 4px 12px; border-radius: 16px;
+    background: rgba(29,184,168,0.15); color: var(--teal);
+  }
+  .course-tag.gold-tag { background: rgba(255,215,0,0.15); color: var(--gold); }
+  .course-name { font-size: 20px; font-weight: 900; margin-bottom: 10px; line-height: 1.35; }
+  .course-desc { font-size: 14px; color: var(--text-dim); line-height: 1.75; margin-bottom: 16px; }
+  .course-meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+  .course-meta-item {
+    font-size: 12.5px; font-weight: 600; color: #B0F0EA;
+    background: rgba(29,184,168,0.08); border: 1px solid rgba(29,184,168,0.25);
+    padding: 5px 12px; border-radius: 16px;
+  }
+  .course-units {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
+  }
+  .course-unit {
+    font-size: 12px; color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    padding: 5px 10px; border-radius: 8px;
+  }
+  .course-price-row {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .course-price { font-size: 22px; font-weight: 900; color: var(--gold); }
+  .course-price-note { font-size: 12.5px; color: var(--text-dim); }
+  .course-btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .course-btn {
+    display: inline-block; text-align: center;
+    font-size: 13.5px; font-weight: 900; padding: 11px 22px;
+    border-radius: 24px; text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .course-btn-primary { background: var(--teal); color: #fff; }
+  .course-btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+  .course-btn-secondary {
+    background: transparent; color: var(--teal); border: 1.5px solid var(--teal);
+  }
+  .course-btn-secondary:hover { background: var(--teal-dim); }
+
+  .course-topics-toggle {
+    background: transparent; border: none; color: var(--teal);
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    padding: 0; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .course-topics-toggle .arrow { transition: transform 0.25s; font-size: 11px; }
+  .course-topics-toggle.open .arrow { transform: rotate(180deg); }
+  .course-units-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .course-units-panel.open { max-height: 600px; }
+
+  .coming-soon-card {
+    background: rgba(255,255,255,0.03); border: 1px dashed rgba(29,184,168,0.4);
+    border-radius: 16px; padding: 28px 30px; text-align: center;
+  }
+  .coming-soon-card .cs-title { font-size: 17px; font-weight: 900; color: var(--teal); margin-bottom: 8px; }
+  .coming-soon-card .cs-desc { font-size: 13.5px; color: var(--text-dim); }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+  .faq-item {
+    background: rgba(29,184,168,0.05); border: 1px solid rgba(29,184,168,0.15);
+    border-radius: 12px; overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 22px; font-size: 15px; font-weight: 700;
+    cursor: pointer; user-select: none;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.2s;
+  }
+  .faq-q:hover { background: rgba(29,184,168,0.08); }
+  .faq-q .arrow { color: var(--teal); font-size: 18px; transition: transform 0.3s; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    font-size: 14px; color: var(--text-dim); line-height: 1.75;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 22px;
+  }
+  .faq-item.open .faq-a { max-height: 260px; padding: 0 22px 18px; }
+  .faq-item.open .arrow { transform: rotate(180deg); }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: linear-gradient(160deg, #0D2545, #0B1A2E);
+    padding: 80px 20px; text-align: center;
+    border-top: 1px solid rgba(29,184,168,0.2);
+    position: relative; overflow: hidden;
+  }
+  .final-cta-deco {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,184,168,0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .final-cta h2 { font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin-bottom: 16px; }
+  .final-cta p { font-size: 16px; color: var(--text-dim); margin-bottom: 36px; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .btn-large {
+    display: inline-block;
+    background: var(--teal); color: #fff;
+    font-size: 18px; font-weight: 900; padding: 18px 48px;
+    border-radius: 40px; text-decoration: none; letter-spacing: 0.5px;
+    box-shadow: 0 6px 32px rgba(29,184,168,0.5);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-bottom: 16px;
+  }
+  .btn-large:hover { background: var(--teal-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(29,184,168,0.55); }
+  .final-cta-note { font-size: 13px; color: var(--text-dim); margin-top: 8px; }
+
+  /* ── FLOATING CTA ── */
+  .float-cta {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    background: var(--teal); color: #fff;
+    font-size: 14px; font-weight: 900; letter-spacing: 0.5px;
+    padding: 14px 22px; border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(29,184,168,0.55);
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .float-cta:hover { background: var(--teal-light); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060F1C;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 20px; text-align: center;
+    font-size: 12px; color: rgba(255,255,255,0.3);
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo-wrap { display: none; }
+    .instructor-wrap { grid-template-columns: 1fr; }
+    .instructor-photo-frame { display: flex; justify-content: center; }
+    .instructor-star-badge { bottom: -14px; }
+    .proof-row { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top accent -->
+<div class="accent-bar"></div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://lumosedu.hk" class="nav-logo">
+      <img src="logo_lumos_v2.png" alt="明道教育" class="nav-logo-img">
+      <div class="nav-brand">
+        <div class="nav-brand-main">明道教育</div>
+        <div class="nav-brand-sub">LUMOS EDUCATION</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#tutor" class="nav-link">導師簡介</a>
+      <a href="#courses" class="nav-link">課程</a>
+      <a href="#faq" class="nav-link">常見問題</a>
+    </div>
+    <a href="https://simonbafs.paperform.co/" class="nav-cta" target="_blank">🎯 立即報名</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-deco-1"></div>
+  <div class="hero-deco-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="tag">⭐ 真・會計狀元</span>
+        <span class="tag" style="background: rgba(29,184,168,0.15); border: 1px solid rgba(29,184,168,0.4); color: #B0F0EA;">DSE BAFS 5★★ × 6屆</span>
+      </div>
+      <h1 class="hero-title">
+        Simon BAFS<br>
+        <span class="teal">會計 · 商業管理補習</span>
+      </h1>
+      <p class="hero-subtitle">中大會計一級榮譽畢業 × CPA Australia 會計師<br>市場唯一，連續多年 DSE BAFS 親奪 5**</p>
+      <div class="hero-meta">
+        <span class="hero-meta-item">🎓 CUHK 一級榮譽</span>
+        <span class="hero-meta-item">📝 CPA Australia</span>
+        <span class="hero-meta-item">🖥 前四大會計師樓</span>
+        <span class="hero-meta-item">📝 親身落場應考</span>
+      </div>
+      <div class="hero-cta-row">
+        <a href="https://simonbafs.paperform.co/" class="btn-primary" target="_blank">🎯 立即報名</a>
+        <a href="#courses" class="btn-secondary">查看課程</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-bg"></div>
+      <img class="hero-photo" src="simon_photo.jpg" alt="Simon Wong">
+      <div class="hero-photo-badge">
+        DSE BAFS<br><strong>5★★ × 6年</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSTRUCTOR ── -->
+<section id="tutor">
+  <div class="container">
+    <p class="section-label">關於導師</p>
+    <h2 class="section-title">Simon Wong：學術與實戰兼備</h2>
+    <div class="divider"></div>
+    <div class="instructor-wrap">
+      <div class="instructor-photo-frame">
+        <img class="instructor-photo" src="simon_photo.jpg" alt="Simon Wong">
+        <div class="instructor-star-badge">⭐ DSE BAFS 5★★ × 6屆</div>
+      </div>
+      <div class="instructor-info">
+        <div class="instructor-name">Simon Wong</div>
+        <div class="instructor-title">明道教育 BAFS / 會計 導師｜@ace.acct.bafs</div>
+
+        <div class="cred-row">
+          <div class="cred-badge">
+            <div class="cred-badge-icon"><img src="CUHK logo.png" alt="CUHK"></div>
+            <div class="cred-badge-text">
+              <strong>CUHK 一級榮譽畢業</strong>
+              主修專業會計學 (PACC)｜Major GPA 3.7/4.0｜屢獲 Dean's List
+            </div>
+          </div>
+          <div class="cred-badge">
+            <div class="cred-badge-icon"><img src="CPAA logo.png" alt="CPA Australia"></div>
+            <div class="cred-badge-text">
+              <strong>CPA Australia 註冊會計師</strong>
+              Advanced Audit、Strategic Management 等 5 個核心單元取得 High Distinction
+            </div>
+          </div>
+        </div>
+
+        <ul class="instructor-points">
+          <li>市場唯一，連續五年 BAFS 親奪 5**</li>
+          <li>六科專業會計師試 1 take 合格</li>
+          <li>曾於四大會計師樓工作，具備商業實戰經驗</li>
+          <li>親身落場應考，比未畢業大學生更資深，比現職教師更了解會計行業運作</li>
+          <li>熟悉香港會計準則</li>
+        </ul>
+
+        <div class="score-table-wrap">
+          <div class="score-table-title">🏆 6屆 DSE BAFS 實戰戰績（全有分紙作證）</div>
+          <table class="score-table">
+            <thead>
+              <tr><th>年份</th><th>分數</th><th>得分率</th><th>成績</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2025 DSE</td><td>187 / 199</td><td class="score-pct">94%</td><td class="score-star">5★★</td></tr>
+              <tr><td>2024 DSE</td><td>186 / 199</td><td class="score-pct">93%</td><td class="score-star">5★★</td></tr>
+              <tr><td>2023 DSE</td><td>194 / 201</td><td class="score-pct">97%</td><td class="score-star">5★★</td></tr>
+              <tr><td>2022 DSE</td><td>179 / 209</td><td class="score-pct">86%</td><td class="score-star">5★★</td></tr>
+              <tr><td>2021 DSE</td><td>189 / 207</td><td class="score-pct">91%</td><td class="score-star">5★★</td></tr>
+              <tr><td>2013 DSE</td><td>180 / 193</td><td class="score-pct">93%</td><td class="score-star">5★★</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cred-badge" style="margin-top:16px; display:inline-flex;">
+          <div class="cred-badge-icon">🏫</div>
+          <div class="cred-badge-text">
+            <strong>HKDSE 2013 Best 5 — 31 分（考生 Top 1.1%）</strong>
+            BAFS 5★★｜Econ 5★｜ICT 5★｜中文 5★｜通識 5★
+          </div>
+        </div>
+
+        <div class="philosophy-box">
+          教 BAFS 而同你一齊落場考既補習導師，寥寥可數。而落場導師當中具會計師資格的，絕無僅有。只有落場，先明白考生每年面對既壓力同埋挑戰，第一時間將考試感受帶比下一屆考生。
+          <span>— Simon 教學理念：落場同行</span>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:20px;">
+          <a href="https://www.instagram.com/ace.acct.bafs" class="instructor-ig" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="flex-shrink:0"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig)"/><rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
+            @ace.acct.bafs
+          </a>
+          <a href="https://wa.me/85254369440" class="instructor-ig" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" style="flex-shrink:0"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.4 10.4 0 0 0 16 5.5a10.5 10.5 0 0 0-9.1 15.7L5.5 26.5l5.5-1.4A10.5 10.5 0 0 0 26.5 16 10.4 10.4 0 0 0 23.5 8.5zm-7.5 16a8.7 8.7 0 0 1-4.5-1.2l-.3-.2-3.3.9.9-3.2-.2-.3A8.8 8.8 0 1 1 16 24.5zm4.8-6.6c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1.1-.3.2-.6 0a7.3 7.3 0 0 1-2.1-1.3 7.8 7.8 0 0 1-1.5-1.8c-.2-.3 0-.5.1-.6l.5-.5.2-.4v-.4l-.9-2.1c-.2-.5-.5-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.5 4 5 5 0 0 0 3 .6 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z" fill="#fff"/></svg>
+            WhatsApp Simon
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURSES ── -->
+<section id="courses">
+  <div class="container">
+    <p class="section-label">課程總覽</p>
+    <h2 class="section-title">揀啱適合你嘅課程</h2>
+    <div class="divider"></div>
+    <p class="section-desc">2026 暑期課程現正接受報名。所有課程均設 Video Solution 課後配套及 WhatsApp 問書支援。</p>
+
+    <div class="course-list">
+
+      <!-- Course 1: Cost Accounting -->
+      <div class="course-card flagship">
+        <div class="course-tags">
+          <span class="course-tag gold-tag">🔥 皇牌推介</span>
+          <span class="course-tag">2027 DSE (S6)</span>
+        </div>
+        <div class="course-name">【S6 2027 DSE 暑期備戰課】Simon BAFS 成本會計 Cost Accounting 全攻略</div>
+        <div class="course-desc">Cost Accounting 喺 Paper 2A 佔比持續上升（2025 年 20% → 2026 年 22%），自 2014 年起一直係必答部分。暑假搞掂佢，開學即刻贏人九條街。近三年 (2023-25) Simon 在 Costing 部分親身考獲滿分。</div>
+        <div class="course-meta-row">
+          <span class="course-meta-item">⏱ 每堂 1.5 小時，共 4 期 15 小時</span>
+          <span class="course-meta-item">📚 R1 - R4 全單元</span>
+        </div>
+        <button class="course-topics-toggle" data-target="units-99">
+          <span class="arrow">▼</span> 查看課程單元
+        </button>
+        <div class="course-units-panel" id="units-99">
+          <div class="course-units">
+            <span class="course-unit">R1 成本分類、概念及詞彙</span>
+            <span class="course-unit">R2 邊際成本法及吸收成本法</span>
+            <span class="course-unit">R3 本量利分析 CVP Analysis</span>
+            <span class="course-unit">R4 短期商業決策及綜合溫習</span>
+          </div>
+        </div>
+        <div class="course-price-row">
+          <span class="course-price">單人夏日價 $1,750</span>
+          <span class="course-price-note">（原價 $2,500，全期4期）｜三人同行每人 $1,250｜早鳥第1期 $100（限額30個，7月3日截止）</span>
+        </div>
+        <div class="course-btn-row">
+          <a href="https://lumosedu.hk/series/BAFS/99-" class="course-btn course-btn-secondary" target="_blank">了解更多</a>
+          <a href="https://simonbafs.paperform.co/" class="course-btn course-btn-primary" target="_blank">立即報名</a>
+        </div>
+      </div>
+
+      <!-- Course 2: 從零起步班 -->
+      <div class="course-card">
+        <div class="course-tags">
+          <span class="course-tag">2027 - 2029 DSE (S4-S6)</span>
+          <span class="course-tag">財務會計基礎</span>
+        </div>
+        <div class="course-name">Simon BAFS 會計基礎從零起步班</div>
+        <div class="course-desc">不論你升中幾，如果你懷疑自己既會計基礎薄弱，今次課程就係為你而設！由 Dr/Cr 借貸記邏輯講起，用會計邏輯出發，杜絕死記硬背，為 9 月開學既常規課程打穩基礎。</div>
+        <div class="course-meta-row">
+          <span class="course-meta-item">⏱ 每堂 1.5 小時，共 4 期 12 小時</span>
+          <span class="course-meta-item">🎯 S6/S5/S4 均適合，管理 Strand 同學亦可</span>
+        </div>
+        <button class="course-topics-toggle" data-target="units-110">
+          <span class="arrow">▼</span> 查看課程單元
+        </button>
+        <div class="course-units-panel" id="units-110">
+          <div class="course-units">
+            <span class="course-unit">R1 - R4 由 Dr/Cr 邏輯到損益表、財務狀況表基礎</span>
+          </div>
+        </div>
+        <div class="course-price-row">
+          <span class="course-price">單人夏日價 $1,400</span>
+          <span class="course-price-note">（原價 $2,000，全期4期）｜三人同行每人 $1,000｜早鳥第1期 $100（限額30個，7月3日截止）</span>
+        </div>
+        <div class="course-btn-row">
+          <a href="https://lumosedu.hk/series/BAFS/110-" class="course-btn course-btn-secondary" target="_blank">了解更多</a>
+          <a href="https://simonbafs.paperform.co/" class="course-btn course-btn-primary" target="_blank">立即報名</a>
+        </div>
+      </div>
+
+      <!-- Course 3: By Topic -->
+      <div class="course-card">
+        <div class="course-tags">
+          <span class="course-tag">中四至中六</span>
+          <span class="course-tag">自選課題</span>
+        </div>
+        <div class="course-name">Simon BAFS By Topic 系列</div>
+        <div class="course-desc">同學可自行選擇需要既課題去學，緊隨自己學校嘅教學進度。每個課題設有主筆記、歷屆試題、Video Solution，部分重點課題另設延伸練習。適合自學能力高、想追補個別課題，或希望突破 Level 4-5 樽頸嘅同學。</div>
+        <div class="course-meta-row">
+          <span class="course-meta-item">📦 30+ 個課題可供選擇</span>
+          <span class="course-meta-item">💰 每課題 $140 - $960（按課題深淺而定）</span>
+        </div>
+        <button class="course-topics-toggle" data-target="units-43">
+          <span class="arrow">▼</span> 查看全部課題（30個）
+        </button>
+        <div class="course-units-panel" id="units-43">
+          <div class="course-units">
+            <span class="course-unit">AC1 基礎會計記帳</span>
+            <span class="course-unit">AC2 折扣</span>
+            <span class="course-unit">AC3 試算表</span>
+            <span class="course-unit">AC4 損益表</span>
+            <span class="course-unit">AC5 財務狀況表</span>
+            <span class="course-unit">FA1 原始分錄簿</span>
+            <span class="course-unit">FA2 期末調整(1) 應計與預付</span>
+            <span class="course-unit">FA3 期末調整(2) 壞帳及呆賬準備</span>
+            <span class="course-unit">FA4 期末調整(3) 折舊與變賣</span>
+            <span class="course-unit">FA5 期末調整(4) 存貨計價</span>
+            <span class="course-unit">FA7 銀行往來調節表</span>
+            <span class="course-unit">FA8 錯誤更正</span>
+            <span class="course-unit">FA9 合夥會計(1) 盈利分撥</span>
+            <span class="course-unit">FA10 合夥會計(2) 商譽及重估帳</span>
+            <span class="course-unit">FA11 有限公司會計(1) 發行股票及債券</span>
+            <span class="course-unit">FA12 有限公司會計(2) 財務報表</span>
+            <span class="course-unit">FA13 不完整記錄</span>
+            <span class="course-unit">FA14 會計原則</span>
+            <span class="course-unit">FA15 財務報表分析（會計比率）</span>
+            <span class="course-unit">CA1 成本會計(I) 成本分類、概念及詞彙</span>
+            <span class="course-unit">CA2 成本會計(II) 邊際成本法及吸收成本法</span>
+            <span class="course-unit">CA3 成本會計(III) 本量利分析</span>
+            <span class="course-unit">CA4 成本會計(IV) 決策</span>
+            <span class="course-unit">PF1 金錢的時間值</span>
+            <span class="course-unit">PF2 消費者信貸</span>
+            <span class="course-unit">PF3 策劃個人理財及投資</span>
+            <span class="course-unit">PF4 以證券交易作投資</span>
+            <span class="course-unit">BE1 香港的營商環境</span>
+            <span class="course-unit">BE2 企業擁有權類型</span>
+            <span class="course-unit">BE3 商業道德與社會責任</span>
+            <span class="course-unit">BM1 管理導論</span>
+            <span class="course-unit">BM2 主要商業功能</span>
+            <span class="course-unit">BM3 中小型企業</span>
+          </div>
+        </div>
+        <div class="course-btn-row">
+          <a href="https://lumosedu.hk/series/BAFS/43-" class="course-btn course-btn-secondary" target="_blank">了解更多及選課</a>
+          <a href="https://simonbafs.paperform.co/" class="course-btn course-btn-primary" target="_blank">立即報名</a>
+        </div>
+      </div>
+
+      <!-- Coming soon: 2026-2027 regular course plan -->
+      <div class="coming-soon-card">
+        <div class="cs-title">📅 2026 - 2027 常規課程計劃</div>
+        <div class="cs-desc">新學年常規課程規劃現正籌備中，敬請期待。想第一時間獲得通知，歡迎透過 WhatsApp 或 Instagram 查詢。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section>
+  <div class="container">
+    <p class="section-label">成績說明一切</p>
+    <h2 class="section-title">唔聽我講，你諗住聽邊個？</h2>
+    <div class="divider"></div>
+    <div class="proof-row">
+      <div class="proof-card">
+        <div class="proof-number gold">6</div>
+        <div class="proof-label">屆親身應考 DSE BAFS 全取 5★★</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number teal">7</div>
+        <div class="proof-label">年累積親身應考 DSE 經驗</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number teal">3</div>
+        <div class="proof-label">年（2023-25）Costing 部分親身考獲滿分</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number" style="color:var(--gold)">1.1%</div>
+        <div class="proof-label">2013 DSE Best 5 全港考生 Top 1.1%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <p class="section-label">常見問題</p>
+    <h2 class="section-title">FAQ</h2>
+    <div class="divider"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">會計 (Accounting) 定 商業管理 (Business Management) 應該點揀？<span class="arrow">▼</span></div>
+        <div class="faq-a">視乎你既強項同興趣。會計部分邏輯性較強，重視計算及入帳準確度；商業管理部分理論性較強，重視理解及應用分析。可以 WhatsApp Simon 傾下你既背景，一齊搵出最適合你既組合。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">會計部分成日計唔平條數 (Balance Sheet)，點改善？<span class="arrow">▼</span></div>
+        <div class="faq-a">呢個係初學會計最常見既痛點，通常源於對借貸記邏輯理解唔透徹。「從零起步班」正正係為此而設，會由邏輯出發重新打好底子。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">商業管理部分使唔使死背全本教科書？<span class="arrow">▼</span></div>
+        <div class="faq-a">唔需要。課堂會集中教你分辨核心概念同考試常見題型，用理解代替死背，減少無謂失分。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">冇商科底子，理解概念會唔會好辛苦？<span class="arrow">▼</span></div>
+        <div class="faq-a">唔會。Simon 慣用日常生活例子解釋抽象概念（例如用自助餐、搭的士講 Costing），保證一聽就明，唔使死背。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">報名後如何確認？<span class="arrow">▼</span></div>
+        <div class="faq-a">填妥 Paperform 表格後，會按指示透過 WhatsApp 聯絡確認，請留意訊息。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-deco"></div>
+  <div style="position:relative; z-index:1;">
+    <div class="tag" style="margin-bottom:24px;">🎯 暑期課程現正接受報名</div>
+    <h2>你既 BAFS 目標係 Level 幾？</h2>
+    <p>由真正落場既 5** 導師，帶你重新規劃備考策略。</p>
+    <a href="https://simonbafs.paperform.co/" class="btn-large" target="_blank">
+      🎯 立即報名
+    </a>
+    <div class="final-cta-note">WhatsApp 問書支援 · 全單元 Video Solution · 落場經驗導師親授</div>
+  </div>
+</section>
+
+<!-- ── FLOATING CTA ── -->
+<a href="https://simonbafs.paperform.co/" class="float-cta" target="_blank">🎯 立即報名</a>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>明道教育 Lumos Education ｜ 學校註冊編號：622605</p>
+  <p style="margin-top:6px;">佐敦彌敦道221號恒福商業中心 1樓103-106室 ｜ <a href="https://wa.me/85298558746">98558746</a></p>
+  <p style="margin-top:6px;"><a href="https://lumosedu.hk">lumosedu.hk</a></p>
+  <p style="margin-top:14px; font-size:11px;">© 2026 Lumos Holding Company Limited. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Course units toggle
+  document.querySelectorAll('.course-topics-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = document.getElementById(btn.dataset.target);
+      const isOpen = panel.classList.contains('open');
+      panel.classList.toggle('open', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+    });
+  });
+</script>
+
+</body>
+</html>
