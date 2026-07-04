@@ -340,6 +340,23 @@
     background: rgba(29,184,168,0.08); border: 1px solid rgba(29,184,168,0.25);
     padding: 5px 12px; border-radius: 16px;
   }
+  .next-lesson-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; font-weight: 900; color: var(--gold);
+    background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4);
+    padding: 5px 12px; border-radius: 16px;
+  }
+  .next-lesson-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--gold);
+    animation: pulse-dot 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  .catchup-note {
+    font-size: 12.5px; color: var(--text-dim); line-height: 1.7;
+    background: rgba(255,255,255,0.03); border: 1px dashed rgba(29,184,168,0.3);
+    border-radius: 10px; padding: 10px 14px; margin-bottom: 16px;
+  }
+  .catchup-note strong { color: var(--teal); }
   .course-units {
     display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
   }
@@ -751,6 +768,7 @@
         <div class="course-meta-row">
           <span class="course-meta-item">⏱ 每堂 1.5 小時，共 4 期 15 小時</span>
           <span class="course-meta-item">📚 四期完整覆蓋成本會計課程</span>
+          <span class="next-lesson-badge" id="next-lesson-99"><span class="next-lesson-dot"></span>載入中...</span>
         </div>
         <button class="course-topics-toggle" data-target="units-99">
           <span class="arrow">▼</span> 查看課程單元
@@ -762,7 +780,9 @@
             <span class="course-unit">R3 本量利分析<span class="unit-en">CVP Analysis</span></span>
             <span class="course-unit">R4 短期商業決策及綜合溫習<span class="unit-en">Decision making and overall revision</span></span>
           </div>
+          <div class="course-schedule-note">R1：2堂・7/4, 7/11（Sat）｜R2：3堂・7/18, 7/25, 8/1（Sat）｜R3：2堂・8/8, 8/15（Sat）｜R4：3堂・8/22, 8/29, 9/5（Sat）｜時間均為 11:00 - 12:30</div>
         </div>
+        <div class="catchup-note"><strong>錯過早前堂數都可以照常報名！</strong>報名後即時獲得郵寄筆記及學習材料，並可於網上觀看課後重溫——無限次重播，直至考 DSE。</div>
         <div class="course-price-row">
           <span class="course-price">單人夏日價 $1,750</span>
           <span class="course-price-note">（原價 $2,500，全期4期）｜三人同行每人 $1,250｜早鳥第1期 $100（限額30個，7月3日截止）</span>
@@ -784,6 +804,7 @@
         <div class="course-meta-row">
           <span class="course-meta-item">⏱ 每堂 1.5 小時，共 3 期 8 堂 12 小時</span>
           <span class="course-meta-item">🎯 S6/S5/S4 均適合，管理 Strand 同學亦可</span>
+          <span class="next-lesson-badge" id="next-lesson-110"><span class="next-lesson-dot"></span>載入中...</span>
         </div>
         <button class="course-topics-toggle" data-target="units-110">
           <span class="arrow">▼</span> 查看課程單元
@@ -798,6 +819,7 @@
           </div>
           <div class="course-schedule-note">R1：2堂・7/11, 7/18（Sat）｜R2：2堂・7/25, 8/1（Sat）｜R3：4堂・8/8, 8/15, 8/22, 8/29（Sat）｜時間均為 12:30 - 14:00</div>
         </div>
+        <div class="catchup-note"><strong>錯過早前堂數都可以照常報名！</strong>報名後即時獲得郵寄筆記及學習材料，並可於網上觀看課後重溫——無限次重播，直至考 DSE。</div>
         <div class="course-price-row">
           <span class="course-price">單人夏日價 $1,400</span>
           <span class="course-price-note">（原價 $2,000，全期3期）｜三人同行每人 $1,000｜早鳥第1期 $100（限額30個，7月10日截止）</span>
@@ -1001,6 +1023,46 @@
       btn.classList.toggle('open', !isOpen);
     });
   });
+
+  // Next-lesson indicator: compares today's date against each course's lesson schedule
+  function formatMD(dateStr) {
+    const d = new Date(dateStr + 'T00:00:00');
+    return `${d.getMonth() + 1}/${d.getDate()}`;
+  }
+  function setNextLesson(elId, lessons) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const next = lessons.find(l => new Date(l.date + 'T00:00:00') >= today);
+    el.innerHTML = next
+      ? `<span class="next-lesson-dot"></span>下一堂 Upcoming：${next.code}（${formatMD(next.date)}）`
+      : `✅ 全期課堂已完成`;
+  }
+
+  setNextLesson('next-lesson-99', [
+    { code: 'R1L1', date: '2026-07-04' },
+    { code: 'R1L2', date: '2026-07-11' },
+    { code: 'R2L1', date: '2026-07-18' },
+    { code: 'R2L2', date: '2026-07-25' },
+    { code: 'R2L3', date: '2026-08-01' },
+    { code: 'R3L1', date: '2026-08-08' },
+    { code: 'R3L2', date: '2026-08-15' },
+    { code: 'R4L1', date: '2026-08-22' },
+    { code: 'R4L2', date: '2026-08-29' },
+    { code: 'R4L3', date: '2026-09-05' },
+  ]);
+
+  setNextLesson('next-lesson-110', [
+    { code: 'R1L1', date: '2026-07-11' },
+    { code: 'R1L2', date: '2026-07-18' },
+    { code: 'R2L1', date: '2026-07-25' },
+    { code: 'R2L2', date: '2026-08-01' },
+    { code: 'R3L1', date: '2026-08-08' },
+    { code: 'R3L2', date: '2026-08-15' },
+    { code: 'R3L3', date: '2026-08-22' },
+    { code: 'R3L4', date: '2026-08-29' },
+  ]);
 </script>
 
 </body>
