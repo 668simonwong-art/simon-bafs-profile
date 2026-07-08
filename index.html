@@ -445,6 +445,20 @@
   }
   .giveaway-btn:hover { background: #ffe45c; transform: translateY(-1px); }
 
+  .solutions-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px; margin-top: 36px;
+  }
+  .solution-card {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--navy-mid); border: 1px solid rgba(29,184,168,0.2);
+    border-radius: 12px; padding: 16px 18px; text-decoration: none;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .solution-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .solution-year { font-size: 20px; font-weight: 900; color: var(--teal); flex-shrink: 0; }
+  .solution-title { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 600; line-height: 1.4; }
+
   .coming-soon-card {
     background: rgba(255,255,255,0.03); border: 1px dashed rgba(29,184,168,0.4);
     border-radius: 16px; padding: 28px 30px; text-align: center;
@@ -585,6 +599,7 @@
       <a href="#tutor" class="nav-link">導師簡介</a>
       <a href="#results" class="nav-link">學生戰績</a>
       <a href="#courses" class="nav-link">課程</a>
+      <a href="#solutions" class="nav-link">解題影片</a>
       <a href="#giveaways" class="nav-link">免費資源</a>
       <a href="#faq" class="nav-link">常見問題</a>
     </div>
@@ -981,6 +996,50 @@
         <div class="cs-desc" style="margin-top:20px; font-size:12.5px;">✦ 課堂模式：每課 1.5 小時｜配套：主筆記、歷屆試題、無限次重溫教學錄影、WhatsApp 問書服務</div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTION VIDEOS ── -->
+<section id="solutions">
+  <div class="container">
+    <p class="section-label">教學示範</p>
+    <h2 class="section-title">歷屆 DSE Paper 2A 全卷解題影片</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Simon 公益免費分享歷屆 BAFS Paper 2A 按步驟解題片段，睇下 5** 導師點答先啱。</p>
+    <div class="solutions-grid">
+      <a href="https://www.youtube.com/playlist?list=PLVGrZagt0PfEwpq7OFj0uJjyYCONtuI44" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2026</span>
+        <span class="solution-title">DSE 2026 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/bafs2025" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2025</span>
+        <span class="solution-title">DSE 2025 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/BAFS2024" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2024</span>
+        <span class="solution-title">DSE 2024 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/BAFS2023" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2023</span>
+        <span class="solution-title">DSE 2023 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/BAFS2022" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2022</span>
+        <span class="solution-title">DSE 2022 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/BAFS2021Sol" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2021</span>
+        <span class="solution-title">DSE 2021 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/BAFS2020" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2020</span>
+        <span class="solution-title">DSE 2020 Paper 2A 全卷 Solution</span>
+      </a>
+      <a href="https://bit.ly/BAFS2019" class="solution-card" target="_blank">
+        <span class="solution-year">▶ 2019</span>
+        <span class="solution-title">DSE 2019 Paper 2A 全卷 Solution</span>
+      </a>
     </div>
   </div>
 </section>
