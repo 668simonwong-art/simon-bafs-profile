@@ -301,6 +301,25 @@
   }
   .result-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
 
+  /* ── WHATSAPP REVIEWS ── */
+  .wa-grid {
+    column-count: 3; column-gap: 20px; margin-top: 36px;
+  }
+  .wa-card {
+    break-inside: avoid; margin-bottom: 20px;
+    background: var(--navy-mid); border: 1px solid rgba(29,184,168,0.2);
+    border-radius: 14px; overflow: hidden; display: block;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .wa-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+  .wa-img { width: 100%; display: block; }
+  .wa-tag {
+    padding: 10px 14px; font-size: 12px; font-weight: 700;
+    color: var(--teal); background: rgba(29,184,168,0.08);
+  }
+  @media (max-width: 900px) { .wa-grid { column-count: 2; } }
+  @media (max-width: 600px) { .wa-grid { column-count: 1; } }
+
   /* ── WHY CHOOSE ── */
   .why-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1100,6 +1119,42 @@
       <div class="proof-card">
         <div class="proof-number" style="color:var(--gold)">1.1%</div>
         <div class="proof-label">2013 DSE Best 5 全港考生 Top 1.1%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHATSAPP REVIEWS ── -->
+<section id="wa-reviews">
+  <div class="container">
+    <p class="section-label">真心話</p>
+    <h2 class="section-title">WhatsApp 對話實錄</h2>
+    <div class="divider"></div>
+    <p class="section-desc">未經修飾嘅真實對話截圖（已隱藏個人資料），睇下學生同家長點講。</p>
+    <div class="wa-grid">
+      <div class="wa-card">
+        <img class="wa-img" src="wa_parent_5star.jpg" alt="家長感謝訊息">
+        <div class="wa-tag">🎓 2026 DSE 黎同學・5*</div>
+      </div>
+      <div class="wa-card">
+        <img class="wa-img" src="wa_lv5_tip.jpg" alt="學生 Lv5 報喜">
+        <div class="wa-tag">🎉 2026 DSE Lv5</div>
+      </div>
+      <div class="wa-card">
+        <img class="wa-img" src="wa_zerostart_praise.jpg" alt="從零起步班學生評語">
+        <div class="wa-tag">📚 從零起步班學生評語</div>
+      </div>
+      <div class="wa-card">
+        <img class="wa-img" src="wa_victoria_best.jpg" alt="學生真心話">
+        <div class="wa-tag">🤍「我遇過最好嘅補習老師」</div>
+      </div>
+      <div class="wa-card">
+        <img class="wa-img" src="wa_minmin_5star.jpg" alt="學生 2026 DSE 5* 成績">
+        <div class="wa-tag">🎓 黃同學・2026 DSE Lv 5*</div>
+      </div>
+      <div class="wa-card">
+        <img class="wa-img" src="wa_palida_english.jpg" alt="Mock exam 評語">
+        <div class="wa-tag">💬 黃同學・2026 Final Tips Mock 評價</div>
       </div>
     </div>
   </div>
