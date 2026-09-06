@@ -80,6 +80,16 @@
     white-space: nowrap;
   }
   .nav-cta:hover { background: var(--teal-light); transform: scale(1.03); }
+  .nav-cta-group { display: flex; align-items: center; gap: 8px; }
+  .nav-whatsapp {
+    background: #25D366; color: #fff;
+    font-size: 13px; font-weight: 900; padding: 9px 16px;
+    border-radius: 24px; text-decoration: none;
+    border: none; cursor: pointer; letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+  }
+  .nav-whatsapp:hover { background: #1EBE5A; transform: scale(1.03); }
 
   /* ── HERO ── */
   .hero {
@@ -230,6 +240,7 @@
   }
   .cred-badge-icon { flex-shrink: 0; display: flex; align-items: center; }
   .cred-badge-icon img { height: 36px; width: auto; border-radius: 4px; }
+  .cred-badge-icon.on-white { background: #fff; padding: 4px 8px; border-radius: 6px; }
   .cred-badge-text strong { display: block; color: var(--gold); font-size: 13px; font-weight: 900; }
 
   /* ── DSE SCORE TABLE ── */
@@ -599,11 +610,25 @@
     margin-bottom: 16px;
   }
   .btn-large:hover { background: var(--teal-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(29,184,168,0.55); }
+  .cta-btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 16px; }
+  .cta-btn-group .btn-large { margin-bottom: 0; }
+  .btn-whatsapp {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #25D366; color: #fff;
+    font-size: 18px; font-weight: 900; padding: 18px 40px;
+    border-radius: 40px; text-decoration: none; letter-spacing: 0.5px;
+    box-shadow: 0 6px 32px rgba(37,211,102,0.45);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .btn-whatsapp:hover { background: #1EBE5A; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(37,211,102,0.5); }
   .final-cta-note { font-size: 13px; color: var(--text-dim); margin-top: 8px; }
 
   /* ── FLOATING CTA ── */
-  .float-cta {
+  .float-cta-group {
     position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+  }
+  .float-cta {
     background: var(--teal); color: #fff;
     font-size: 14px; font-weight: 900; letter-spacing: 0.5px;
     padding: 14px 22px; border-radius: 40px;
@@ -613,6 +638,16 @@
     white-space: nowrap;
   }
   .float-cta:hover { background: var(--teal-light); transform: translateY(-2px); }
+  .float-cta-whatsapp {
+    background: #25D366; color: #fff;
+    font-size: 14px; font-weight: 900; letter-spacing: 0.5px;
+    padding: 14px 22px; border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .float-cta-whatsapp:hover { background: #1EBE5A; transform: translateY(-2px); }
 
   /* ── FOOTER ── */
   footer {
@@ -633,6 +668,8 @@
     .proof-row { grid-template-columns: repeat(2, 1fr); }
     .nav-links { display: none; }
     .nav-cta { padding: 8px 14px; font-size: 12px; }
+    .nav-whatsapp { padding: 8px 10px; font-size: 12px; }
+    .nav-whatsapp .nav-whatsapp-text { display: none; }
   }
 </style>
 </head>
@@ -659,7 +696,10 @@
       <a href="#giveaways" class="nav-link">免費資源</a>
       <a href="#faq" class="nav-link">常見問題</a>
     </div>
-    <a href="https://simonbafs.paperform.co/" class="nav-cta" target="_blank">🎯 立即報名</a>
+    <div class="nav-cta-group">
+      <a href="https://wa.me/85254369440?text=%E6%88%91%E7%9D%87%E7%B7%8A%20Simon%20BAFS%20%E7%B6%B2%E7%AB%99%EF%BC%8C%E6%88%91%E6%83%B3%E5%95%8F%EF%BC%9A" class="nav-whatsapp" target="_blank">💬<span class="nav-whatsapp-text"> WhatsApp</span></a>
+      <a href="https://simonbafs.paperform.co/" class="nav-cta" target="_blank">🎯 立即報名</a>
+    </div>
   </div>
 </nav>
 
@@ -717,7 +757,7 @@
 
         <div class="cred-row">
           <div class="cred-badge">
-            <div class="cred-badge-icon"><img src="CUHK logo.png" alt="CUHK"></div>
+            <div class="cred-badge-icon on-white"><img src="CUHK logo.png" alt="CUHK"></div>
             <div class="cred-badge-text">
               <strong>CUHK 一級榮譽畢業</strong>
               主修專業會計學 (PACC)｜Major GPA 3.7/4.0｜屢獲 Dean's List
@@ -1435,18 +1475,26 @@
 <section class="final-cta">
   <div class="final-cta-deco"></div>
   <div style="position:relative; z-index:1;">
-    <div class="tag" style="margin-bottom:24px;">🎯 暑期課程現正接受報名</div>
+    <div class="tag" style="margin-bottom:24px;">🎯 常規課程現正接受報名</div>
     <h2>BAFS —— 你的大學入場券</h2>
     <p>由真正落場既 5** 導師，帶你重新規劃備考策略。</p>
-    <a href="https://simonbafs.paperform.co/" class="btn-large" target="_blank">
-      🎯 立即報名
-    </a>
+    <div class="cta-btn-group">
+      <a href="https://simonbafs.paperform.co/" class="btn-large" target="_blank">
+        🎯 立即報名
+      </a>
+      <a href="https://wa.me/85254369440?text=%E6%88%91%E7%9D%87%E7%B7%8A%20Simon%20BAFS%20%E7%B6%B2%E7%AB%99%EF%BC%8C%E6%88%91%E6%83%B3%E5%95%8F%EF%BC%9A" class="btn-whatsapp" target="_blank">
+        💬 WhatsApp Simon 查詢
+      </a>
+    </div>
     <div class="final-cta-note">WhatsApp 問書支援 · 全單元 Video Solution · 落場經驗導師親授</div>
   </div>
 </section>
 
 <!-- ── FLOATING CTA ── -->
-<a href="https://simonbafs.paperform.co/" class="float-cta" target="_blank">🎯 立即報名</a>
+<div class="float-cta-group">
+  <a href="https://wa.me/85254369440?text=%E6%88%91%E7%9D%87%E7%B7%8A%20Simon%20BAFS%20%E7%B6%B2%E7%AB%99%EF%BC%8C%E6%88%91%E6%83%B3%E5%95%8F%EF%BC%9A" class="float-cta-whatsapp" target="_blank">💬 WhatsApp Simon 查詢</a>
+  <a href="https://simonbafs.paperform.co/" class="float-cta" target="_blank">🎯 立即報名</a>
+</div>
 
 <!-- ── FOOTER ── -->
 <footer>
