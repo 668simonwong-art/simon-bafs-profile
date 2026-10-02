@@ -262,6 +262,14 @@
   .score-table tr:last-child td { border-bottom: none; }
   .score-table .score-star { color: var(--gold); font-weight: 900; }
   .score-table .score-pct { color: var(--teal); font-weight: 700; }
+  .score-table tr[data-period="R1"] td { background: rgba(29,184,168,0.07); }
+  .score-table tr[data-period="R1"] td:first-child { border-left: 3px solid rgba(29,184,168,0.7); }
+  .score-table tr[data-period="R2"] td { background: rgba(255,215,0,0.06); }
+  .score-table tr[data-period="R2"] td:first-child { border-left: 3px solid rgba(255,215,0,0.7); }
+  .score-table tr[data-period="R3"] td { background: rgba(147,129,255,0.08); }
+  .score-table tr[data-period="R3"] td:first-child { border-left: 3px solid rgba(147,129,255,0.75); }
+  .score-table tr[data-period="R4"] td { background: rgba(255,138,101,0.07); }
+  .score-table tr[data-period="R4"] td:first-child { border-left: 3px solid rgba(255,138,101,0.75); }
   .score-table tr.next-lesson-row td {
     position: relative;
     background: rgba(29,184,168,0.14);
@@ -1121,20 +1129,20 @@
           <table class="score-table">
             <thead><tr><th>堂數</th><th>日期</th><th>時間</th><th>備註</th></tr></thead>
             <tbody>
-              <tr data-date="2026-09-19"><td>R1L1</td><td>9/19（六）</td><td>12:15–13:45</td><td>—</td></tr>
-              <tr data-date="2026-09-26"><td>R1L2</td><td>9/26（六）</td><td>12:15–13:45</td><td>中秋節翌日</td></tr>
-              <tr data-date="2026-10-01"><td>R1L3+L4</td><td>10/1（四）</td><td>16:00–19:00</td><td>國慶日・連堂</td></tr>
-              <tr data-date="2026-10-03"><td>R2L1</td><td>10/3（六）</td><td>12:15–13:45</td><td>—</td></tr>
-              <tr data-date="2026-10-12"><td>R2L2</td><td>10/12（一）</td><td>19:00–20:30</td><td>—</td></tr>
-              <tr data-date="2026-10-19"><td>R2L3+L4</td><td>10/19（一）</td><td>16:00–19:00</td><td>重陽節翌日・連堂</td></tr>
-              <tr data-date="2026-10-24"><td>R3L1</td><td>10/24（六）</td><td>12:15–13:45</td><td>—</td></tr>
-              <tr data-date="2026-10-26"><td>R3L2</td><td>10/26（一）</td><td>19:00–20:30</td><td>—</td></tr>
-              <tr data-date="2026-10-31"><td>R3L3</td><td>10/31（六）</td><td>12:15–13:45</td><td>—</td></tr>
-              <tr data-date="2026-11-02"><td>R3L4</td><td>11/2（一）</td><td>19:00–20:30</td><td>—</td></tr>
-              <tr data-date="2026-11-09"><td>R4L1</td><td>11/9（一）</td><td>19:00–20:30</td><td>—</td></tr>
-              <tr data-date="2026-11-21"><td>R4L2</td><td>11/21（六）</td><td>12:15–13:45</td><td>—</td></tr>
-              <tr data-date="2026-11-23"><td>R4L3</td><td>11/23（一）</td><td>19:00–20:30</td><td>—</td></tr>
-              <tr data-date="2026-11-28"><td>R4L4</td><td>11/28（六）</td><td>12:15–13:45</td><td>—</td></tr>
+              <tr data-date="2026-09-19" data-period="R1"><td>R1L1</td><td>9/19（六）</td><td>12:15–13:45</td><td>—</td></tr>
+              <tr data-date="2026-09-26" data-period="R1"><td>R1L2</td><td>9/26（六）</td><td>12:15–13:45</td><td>中秋節翌日</td></tr>
+              <tr data-date="2026-10-01" data-period="R1"><td>R1L3+L4</td><td>10/1（四）</td><td>16:00–19:00</td><td>國慶日・連堂</td></tr>
+              <tr data-date="2026-10-03" data-period="R2"><td>R2L1</td><td>10/3（六）</td><td>12:15–13:45</td><td>—</td></tr>
+              <tr data-date="2026-10-12" data-period="R2"><td>R2L2</td><td>10/12（一）</td><td>19:00–20:30</td><td>—</td></tr>
+              <tr data-date="2026-10-19" data-period="R2"><td>R2L3+L4</td><td>10/19（一）</td><td>16:00–19:00</td><td>重陽節翌日・連堂</td></tr>
+              <tr data-date="2026-10-24" data-period="R3"><td>R3L1</td><td>10/24（六）</td><td>12:15–13:45</td><td>—</td></tr>
+              <tr data-date="2026-10-26" data-period="R3"><td>R3L2</td><td>10/26（一）</td><td>19:00–20:30</td><td>—</td></tr>
+              <tr data-date="2026-10-31" data-period="R3"><td>R3L3</td><td>10/31（六）</td><td>12:15–13:45</td><td>—</td></tr>
+              <tr data-date="2026-11-02" data-period="R3"><td>R3L4</td><td>11/2（一）</td><td>19:00–20:30</td><td>—</td></tr>
+              <tr data-date="2026-11-09" data-period="R4"><td>R4L1</td><td>11/9（一）</td><td>19:00–20:30</td><td>—</td></tr>
+              <tr data-date="2026-11-21" data-period="R4"><td>R4L2</td><td>11/21（六）</td><td>12:15–13:45</td><td>—</td></tr>
+              <tr data-date="2026-11-23" data-period="R4"><td>R4L3</td><td>11/23（一）</td><td>19:00–20:30</td><td>—</td></tr>
+              <tr data-date="2026-11-28" data-period="R4"><td>R4L4</td><td>11/28（六）</td><td>12:15–13:45</td><td>—</td></tr>
             </tbody>
           </table>
         </div>
@@ -1196,20 +1204,20 @@
           <table class="score-table">
             <thead><tr><th>堂數</th><th>日期</th><th>時間</th><th>備註</th></tr></thead>
             <tbody>
-              <tr data-date="2026-09-19"><td>R1L1</td><td>9/19（六）</td><td>10:45–12:15</td><td>—</td></tr>
-              <tr data-date="2026-09-26"><td>R1L2</td><td>9/26（六）</td><td>10:45–12:15</td><td>中秋節翌日</td></tr>
-              <tr data-date="2026-10-01"><td>R1L3+L4</td><td>10/1（四）</td><td>11:00–14:00</td><td>國慶日・連堂</td></tr>
-              <tr data-date="2026-10-03"><td>R2L1</td><td>10/3（六）</td><td>10:45–12:15</td><td>—</td></tr>
-              <tr data-date="2026-10-08"><td>R2L2</td><td>10/8（四）</td><td>18:15–19:45</td><td>—</td></tr>
-              <tr data-date="2026-10-19"><td>R2L3+L4</td><td>10/19（一）</td><td>11:00–14:00</td><td>重陽節翌日・連堂</td></tr>
-              <tr data-date="2026-10-24"><td>R3L1</td><td>10/24（六）</td><td>10:45–12:15</td><td>—</td></tr>
-              <tr data-date="2026-10-29"><td>R3L2</td><td>10/29（四）</td><td>18:15–19:45</td><td>—</td></tr>
-              <tr data-date="2026-10-31"><td>R3L3</td><td>10/31（六）</td><td>10:45–12:15</td><td>—</td></tr>
-              <tr data-date="2026-11-05"><td>R3L4</td><td>11/5（四）</td><td>18:15–19:45</td><td>—</td></tr>
-              <tr data-date="2026-11-19"><td>R4L1</td><td>11/19（四）</td><td>18:15–19:45</td><td>—</td></tr>
-              <tr data-date="2026-11-21"><td>R4L2</td><td>11/21（六）</td><td>10:45–12:15</td><td>—</td></tr>
-              <tr data-date="2026-11-28"><td>R4L3</td><td>11/28（六）</td><td>10:45–12:15</td><td>—</td></tr>
-              <tr data-date="2026-12-03"><td>R4L4</td><td>12/3（四）</td><td>18:15–19:45</td><td>—</td></tr>
+              <tr data-date="2026-09-19" data-period="R1"><td>R1L1</td><td>9/19（六）</td><td>10:45–12:15</td><td>—</td></tr>
+              <tr data-date="2026-09-26" data-period="R1"><td>R1L2</td><td>9/26（六）</td><td>10:45–12:15</td><td>中秋節翌日</td></tr>
+              <tr data-date="2026-10-01" data-period="R1"><td>R1L3+L4</td><td>10/1（四）</td><td>11:00–14:00</td><td>國慶日・連堂</td></tr>
+              <tr data-date="2026-10-03" data-period="R2"><td>R2L1</td><td>10/3（六）</td><td>10:45–12:15</td><td>—</td></tr>
+              <tr data-date="2026-10-08" data-period="R2"><td>R2L2</td><td>10/8（四）</td><td>18:15–19:45</td><td>—</td></tr>
+              <tr data-date="2026-10-19" data-period="R2"><td>R2L3+L4</td><td>10/19（一）</td><td>11:00–14:00</td><td>重陽節翌日・連堂</td></tr>
+              <tr data-date="2026-10-24" data-period="R3"><td>R3L1</td><td>10/24（六）</td><td>10:45–12:15</td><td>—</td></tr>
+              <tr data-date="2026-10-29" data-period="R3"><td>R3L2</td><td>10/29（四）</td><td>18:15–19:45</td><td>—</td></tr>
+              <tr data-date="2026-10-31" data-period="R3"><td>R3L3</td><td>10/31（六）</td><td>10:45–12:15</td><td>—</td></tr>
+              <tr data-date="2026-11-05" data-period="R3"><td>R3L4</td><td>11/5（四）</td><td>18:15–19:45</td><td>—</td></tr>
+              <tr data-date="2026-11-19" data-period="R4"><td>R4L1</td><td>11/19（四）</td><td>18:15–19:45</td><td>—</td></tr>
+              <tr data-date="2026-11-21" data-period="R4"><td>R4L2</td><td>11/21（六）</td><td>10:45–12:15</td><td>—</td></tr>
+              <tr data-date="2026-11-28" data-period="R4"><td>R4L3</td><td>11/28（六）</td><td>10:45–12:15</td><td>—</td></tr>
+              <tr data-date="2026-12-03" data-period="R4"><td>R4L4</td><td>12/3（四）</td><td>18:15–19:45</td><td>—</td></tr>
             </tbody>
           </table>
         </div>
