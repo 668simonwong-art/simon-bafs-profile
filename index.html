@@ -468,6 +468,20 @@
     color: var(--teal); text-transform: uppercase;
     margin: 4px 0 10px;
   }
+  .unit-subgroup-label {
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.3px;
+    color: rgba(255,255,255,0.45); text-transform: uppercase;
+    margin: 0 0 7px 2px;
+  }
+  .course-units.subgroup { margin-bottom: 14px; }
+  .unit-nested { padding-left: 14px; border-left: 2px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+  .unit-subsubgroup-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.2px;
+    color: rgba(255,255,255,0.38); text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  .unit-nested .course-units { margin-bottom: 12px; }
+  .unit-price { color: var(--gold); font-weight: 700; font-size: 0.88em; margin-left: 4px; }
   .course-unit {
     font-size: 12px; color: rgba(255,255,255,0.7);
     background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
@@ -1102,7 +1116,7 @@
               <tr data-date="2026-10-01"><td>R1L3+L4</td><td>10/1（四）</td><td>16:00–19:00</td><td>國慶日・連堂</td></tr>
               <tr data-date="2026-10-03"><td>R2L1</td><td>10/3（六）</td><td>12:15–13:45</td><td>—</td></tr>
               <tr data-date="2026-10-12"><td>R2L2</td><td>10/12（一）</td><td>19:00–20:30</td><td>—</td></tr>
-              <tr data-date="2026-10-19"><td>R2L3+L4</td><td>10/19（一）</td><td>16:00–19:00</td><td>連堂</td></tr>
+              <tr data-date="2026-10-19"><td>R2L3+L4</td><td>10/19（一）</td><td>16:00–19:00</td><td>重陽節翌日・連堂</td></tr>
               <tr data-date="2026-10-24"><td>R3L1</td><td>10/24（六）</td><td>12:15–13:45</td><td>—</td></tr>
               <tr data-date="2026-10-26"><td>R3L2</td><td>10/26（一）</td><td>19:00–20:30</td><td>—</td></tr>
               <tr data-date="2026-10-31"><td>R3L3</td><td>10/31（六）</td><td>12:15–13:45</td><td>—</td></tr>
@@ -1167,7 +1181,7 @@
               <tr data-date="2026-10-01"><td>R1L3+L4</td><td>10/1（四）</td><td>11:00–14:00</td><td>國慶日・連堂</td></tr>
               <tr data-date="2026-10-03"><td>R2L1</td><td>10/3（六）</td><td>10:45–12:15</td><td>—</td></tr>
               <tr data-date="2026-10-08"><td>R2L2</td><td>10/8（四）</td><td>18:15–19:45</td><td>—</td></tr>
-              <tr data-date="2026-10-19"><td>R2L3+L4</td><td>10/19（一）</td><td>11:00–14:00</td><td>連堂</td></tr>
+              <tr data-date="2026-10-19"><td>R2L3+L4</td><td>10/19（一）</td><td>11:00–14:00</td><td>重陽節翌日・連堂</td></tr>
               <tr data-date="2026-10-24"><td>R3L1</td><td>10/24（六）</td><td>10:45–12:15</td><td>—</td></tr>
               <tr data-date="2026-10-29"><td>R3L2</td><td>10/29（四）</td><td>18:15–19:45</td><td>—</td></tr>
               <tr data-date="2026-10-31"><td>R3L3</td><td>10/31（六）</td><td>10:45–12:15</td><td>—</td></tr>
@@ -1198,51 +1212,81 @@
         <div class="course-name">Simon BAFS By Topic 系列</div>
         <div class="course-desc">同學可自行選擇需要既課題去學，緊隨自己學校嘅教學進度。每個課題設有主筆記、歷屆試題、Video Solution，部分重點課題另設延伸練習。適合自學能力高、想追補個別課題，或希望突破 Level 4-5 樽頸嘅同學。</div>
         <div class="course-meta-row">
-          <span class="course-meta-item">📦 30+ 個課題可供選擇</span>
+          <span class="course-meta-item">📦 34 個課題可供選擇</span>
           <span class="course-meta-item">💰 每課題 $140 - $960（按課題深淺而定）</span>
         </div>
         <button class="course-topics-toggle" data-target="units-43">
-          <span class="arrow">▼</span> 查看全部課題（30個）
+          <span class="arrow">▼</span> 查看全部課題（34個）
         </button>
         <div class="course-units-panel" id="units-43">
           <div class="unit-group-label">選修 Paper 2A 會計 · Accounting Elective</div>
+          <div class="unit-subgroup-label">AC · 基礎財務會計 Introduction to Financial Accounting（中四內容）</div>
+          <div class="course-units subgroup">
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0038-ac1-basic-accounting-entries" class="course-unit" target="_blank">AC1 基礎會計記帳<span class="unit-price">$590</span><span class="unit-en">Basic accounting entries</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0039-ac2-discounts-trade-and-cash-discounts" class="course-unit" target="_blank">AC2 折扣<span class="unit-price">$280</span><span class="unit-en">Discounts (trade and cash discounts)</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0040-ac3-trial-balance" class="course-unit" target="_blank">AC3 試算表<span class="unit-price">$320</span><span class="unit-en">Trial balance</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0114-dse-bafs-income-statement-live-class" class="course-unit" target="_blank">AC4 損益表<span class="unit-price">$320</span><span class="unit-en">Income statement</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0115-ac5-statement-of-financial-position" class="course-unit" target="_blank">AC5 財務狀況表<span class="unit-price">$520</span><span class="unit-en">Statement of financial position</span></a>
+          </div>
+          <div class="unit-subgroup-label">FA · 財務會計 Financial Accounting（中四五內容）</div>
+          <div class="unit-nested">
+            <div class="unit-subsubgroup-label">期末調整 Period-end adjustments</div>
+            <div class="course-units">
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0044-fa2-period-end-adjustments-1-1-accrual-and-prepayment" class="course-unit" target="_blank">FA2 期末調整(1) 應計與預付<span class="unit-price">$490</span><span class="unit-en">Accrual and prepayment</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0121-fa3-period-end-adjustments-2-bad-debts-and-allowance-for-doubtful-accounts" class="course-unit" target="_blank">FA3 期末調整(2) 壞帳及呆賬準備<span class="unit-price">$490</span><span class="unit-en">Bad debts and allowance for doubtful accounts</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0046-fa4-period-end-adjustments-3-3-depreciation-and-disposal" class="course-unit" target="_blank">FA4 期末調整(3) 折舊與變賣<span class="unit-price">$780</span><span class="unit-en">Depreciation and disposal</span></a>
+              <span class="course-unit">FA5 期末調整(4) 存貨計價<span class="unit-en">Inventory valuation</span></span>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0105-fa6-financial-statements-reflecting-period-end-adjustments" class="course-unit" target="_blank">FA6 期末調整後的財務報表<span class="unit-price">$490</span><span class="unit-en">Financial Statements Reflecting Period-End Adjustments</span></a>
+            </div>
+            <div class="unit-subsubgroup-label">控制系統 Control system</div>
+            <div class="course-units">
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0048-fa7-bank-reconciliation-statement" class="course-unit" target="_blank">FA7 銀行往來調節表<span class="unit-price">$580</span><span class="unit-en">Bank Reconciliation Statement</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0049-fa8-correction-of-errors" class="course-unit" target="_blank">FA8 錯誤更正<span class="unit-price">$780</span><span class="unit-en">Correction of errors</span></a>
+            </div>
+            <div class="unit-subsubgroup-label">合夥會計 Partnership</div>
+            <div class="course-units">
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0054-fa9-partnership-1-appropriations-1" class="course-unit" target="_blank">FA9 合夥會計(1) 盈利分撥<span class="unit-price">$490</span><span class="unit-en">Partnership (1) Appropriations</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0056-fa10-partnership-2-goodwill-and-revaluation-2" class="course-unit" target="_blank">FA10 合夥會計(2) 商譽及重估帳<span class="unit-price">$580</span><span class="unit-en">Partnership (2) Goodwill and revaluation</span></a>
+            </div>
+            <div class="unit-subsubgroup-label">有限公司會計 Limited companies</div>
+            <div class="course-units">
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0050-fa11-limited-companies-1-issuance-of-shares-or-debentures-1" class="course-unit" target="_blank">FA11 有限公司會計(1) 發行股票及債券<span class="unit-price">$320</span><span class="unit-en">Limited Companies (1) Issuance of shares or debentures</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0055-fa12-limited-companies-2-financial-statements-2" class="course-unit" target="_blank">FA12 有限公司會計(2) 財務報表<span class="unit-price">$490</span><span class="unit-en">Limited Companies (2) Financial Statements</span></a>
+            </div>
+            <div class="unit-subsubgroup-label">其它財務會計課題 Other financial accounting topics</div>
+            <div class="course-units">
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0043-fa1-books-of-original-entries" class="course-unit" target="_blank">FA1 原始分錄簿<span class="unit-price">$380</span><span class="unit-en">Books of original entries</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0064-fa13-incomplete-records" class="course-unit" target="_blank">FA13 不完整記錄<span class="unit-price">$580</span><span class="unit-en">Incomplete records</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0065-fa14-accounting-principles" class="course-unit" target="_blank">FA14 會計原則<span class="unit-price">$490</span><span class="unit-en">Accounting principles</span></a>
+              <a href="https://lumosedu.hk/course/BAFS/BAFS0082-fa15-financial-analysis-ratios" class="course-unit" target="_blank">FA15 財務報表分析（會計比率）<span class="unit-price">$960</span><span class="unit-en">Financial analysis (Ratios)</span></a>
+            </div>
+          </div>
+          <div class="unit-subgroup-label">CA · 成本會計 Cost Accounting（中六內容）</div>
           <div class="course-units">
-            <span class="course-unit">AC1 基礎會計記帳<span class="unit-en">Basic accounting entries</span></span>
-            <span class="course-unit">AC2 折扣<span class="unit-en">Discounts (trade and cash discounts)</span></span>
-            <span class="course-unit">AC3 試算表<span class="unit-en">Trial balance</span></span>
-            <span class="course-unit">AC4 損益表<span class="unit-en">Income statement</span></span>
-            <span class="course-unit">AC5 財務狀況表<span class="unit-en">Statement of financial position</span></span>
-            <span class="course-unit">FA1 原始分錄簿<span class="unit-en">Books of original entries</span></span>
-            <span class="course-unit">FA2 期末調整(1) 應計與預付<span class="unit-en">Accrual and prepayment</span></span>
-            <span class="course-unit">FA3 期末調整(2) 壞帳及呆賬準備<span class="unit-en">Bad debts and allowance for doubtful accounts</span></span>
-            <span class="course-unit">FA4 期末調整(3) 折舊與變賣<span class="unit-en">Depreciation and disposal</span></span>
-            <span class="course-unit">FA5 期末調整(4) 存貨計價<span class="unit-en">Inventory valuation</span></span>
-            <span class="course-unit">FA7 銀行往來調節表<span class="unit-en">Bank Reconciliation Statement</span></span>
-            <span class="course-unit">FA8 錯誤更正<span class="unit-en">Correction of errors</span></span>
-            <span class="course-unit">FA9 合夥會計(1) 盈利分撥<span class="unit-en">Partnership (1) Appropriations</span></span>
-            <span class="course-unit">FA10 合夥會計(2) 商譽及重估帳<span class="unit-en">Partnership (2) Goodwill and revaluation</span></span>
-            <span class="course-unit">FA11 有限公司會計(1) 發行股票及債券<span class="unit-en">Limited Companies (1) Issuance of shares or debentures</span></span>
-            <span class="course-unit">FA12 有限公司會計(2) 財務報表<span class="unit-en">Limited Companies (2) Financial Statements</span></span>
-            <span class="course-unit">FA13 不完整記錄<span class="unit-en">Incomplete records</span></span>
-            <span class="course-unit">FA14 會計原則<span class="unit-en">Accounting principles</span></span>
-            <span class="course-unit">FA15 財務報表分析（會計比率）<span class="unit-en">Financial analysis (Ratios)</span></span>
-            <a href="https://lumosedu.hk/course/BAFS/BAFS0096-s6-2027-dse-simon-bafs-cost-accounting-r1-cost-classifications-and-terms" class="course-unit" target="_blank">CA1 成本會計(I) 成本分類、概念及詞彙<span class="unit-en">Costing (I) Cost classifications, concepts and terminology</span></a>
-            <a href="https://lumosedu.hk/course/BAFS/BAFS0097-s6-2027-dse-simon-bafs-cost-accounting-r2-marginal-and-absorption-costin" class="course-unit" target="_blank">CA2 成本會計(II) 邊際成本法及吸收成本法<span class="unit-en">Costing (II) Absorption and Marginal Costing</span></a>
-            <a href="https://lumosedu.hk/course/BAFS/BAFS0098-s6-2027-dse-simon-bafs-cost-accounting-r3-cvp-analysis" class="course-unit" target="_blank">CA3 成本會計(III) 本量利分析<span class="unit-en">Costing (III) CVP Analysis</span></a>
-            <a href="https://lumosedu.hk/course/BAFS/BAFS0099-s6-2027-dse-simon-bafs-cost-accounting-r4-decision-making-and-overall-re" class="course-unit" target="_blank">CA4 成本會計(IV) 決策<span class="unit-en">Costing (IV) Decision making</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0096-s6-2027-dse-simon-bafs-cost-accounting-r1-cost-classifications-and-terms" class="course-unit" target="_blank">CA1 成本會計(I) 成本分類、概念及詞彙<span class="unit-price">$500</span><span class="unit-en">Costing (I) Cost classifications, concepts and terminology</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0097-s6-2027-dse-simon-bafs-cost-accounting-r2-marginal-and-absorption-costin" class="course-unit" target="_blank">CA2 成本會計(II) 邊際成本法及吸收成本法<span class="unit-price">$750</span><span class="unit-en">Costing (II) Absorption and Marginal Costing</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0098-s6-2027-dse-simon-bafs-cost-accounting-r3-cvp-analysis" class="course-unit" target="_blank">CA3 成本會計(III) 本量利分析<span class="unit-price">$500</span><span class="unit-en">Costing (III) CVP Analysis</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0099-s6-2027-dse-simon-bafs-cost-accounting-r4-decision-making-and-overall-re" class="course-unit" target="_blank">CA4 成本會計(IV) 決策<span class="unit-price">$750</span><span class="unit-en">Costing (IV) Decision making</span></a>
           </div>
           <div class="unit-group-label">必修部分 Paper 1A · Compulsory Part</div>
+          <div class="unit-subgroup-label">PF · 個人理財 Personal Finance</div>
+          <div class="course-units subgroup">
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0068-pf1-time-value-of-money" class="course-unit" target="_blank">PF1 金錢的時間值<span class="unit-price">$280</span><span class="unit-en">Time Value of Money</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0069-pf2-consumer-credit" class="course-unit" target="_blank">PF2 消費者信貸<span class="unit-price">$280</span><span class="unit-en">Consumer Credit</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0070-pf3-personal-financial-planning-and-investment" class="course-unit" target="_blank">PF3 策劃個人理財及投資<span class="unit-price">$380</span><span class="unit-en">Personal Financial Planning and Investment</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0071-pf4-stock-trading-as-an-investment" class="course-unit" target="_blank">PF4 以證券交易作投資<span class="unit-price">$180</span><span class="unit-en">Stock Trading as an Investment</span></a>
+          </div>
+          <div class="unit-subgroup-label">BE · 營商環境 Business Environment</div>
+          <div class="course-units subgroup">
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0074-be1-hong-kong-business-environment" class="course-unit" target="_blank">BE1 香港的營商環境<span class="unit-price">$320</span><span class="unit-en">Hong Kong business environment</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0075-be2-forms-of-business-ownership" class="course-unit" target="_blank">BE2 企業擁有權類型<span class="unit-price">$240</span><span class="unit-en">Forms of business ownership</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0076-be3-business-ethics-and-social-responsibilities" class="course-unit" target="_blank">BE3 商業道德與社會責任<span class="unit-price">$140</span><span class="unit-en">Business Ethics and Social Responsibilities</span></a>
+          </div>
+          <div class="unit-subgroup-label">BM · 管理導論 Introduction to Management</div>
           <div class="course-units">
-            <span class="course-unit">PF1 金錢的時間值<span class="unit-en">Time Value of Money</span></span>
-            <span class="course-unit">PF2 消費者信貸<span class="unit-en">Consumer Credit</span></span>
-            <span class="course-unit">PF3 策劃個人理財及投資<span class="unit-en">Personal Financial Planning and Investment</span></span>
-            <span class="course-unit">PF4 以證券交易作投資<span class="unit-en">Stock Trading as an Investment</span></span>
-            <span class="course-unit">BE1 香港的營商環境<span class="unit-en">Hong Kong business environment</span></span>
-            <span class="course-unit">BE2 企業擁有權類型<span class="unit-en">Forms of business ownership</span></span>
-            <span class="course-unit">BE3 商業道德與社會責任<span class="unit-en">Business Ethics and Social Responsibilities</span></span>
-            <span class="course-unit">BM1 管理導論<span class="unit-en">Introduction to management</span></span>
-            <span class="course-unit">BM2 主要商業功能<span class="unit-en">Key business functions</span></span>
-            <span class="course-unit">BM3 中小型企業<span class="unit-en">Small and Medium Enterprises (SMEs)</span></span>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0078-bm1-introduction-to-management" class="course-unit" target="_blank">BM1 管理導論<span class="unit-price">$380</span><span class="unit-en">Introduction to management</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0079-bm2-key-business-functions" class="course-unit" target="_blank">BM2 主要商業功能<span class="unit-price">$180</span><span class="unit-en">Key business functions</span></a>
+            <a href="https://lumosedu.hk/course/BAFS/BAFS0077-bm3-small-and-medium-enterprises-smes" class="course-unit" target="_blank">BM3 中小型企業<span class="unit-price">$140</span><span class="unit-en">Small and Medium Enterprises (SMEs)</span></a>
           </div>
         </div>
         <div class="course-btn-row">
